@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fuera de Órbita — Café</title>
+
+  <link rel="stylesheet" href="css/carrito.css">
+
+  <script src="scripts/enviar_pedido.js" defer></script>
+  <script src="scripts/carrito.js" defer></script>
+  <script src="scripts/components.js" defer></script>
+</head>
+
+<body>
+
+  <header>
+    <div id="header"></div>
+  </header>
+
+  <section class="hero">
+    <div class="hero__content">
+      <h1 class="hero__title">TU CARRITO ESTÁ<br>CASI LISTO.</h1>
+      <p class="hero__subtitle">
+        Revisa tus artículos antes del despegue.
+      </p>
+      <a href="menu.html" class="hero__link">VOLVER AL MENÚ</a>
+    </div>
+
+    <div class="hero__art">
+      <img
+        src="https://i.ibb.co/DXp7RbH/Gemini-Generated-Image-hgbqp2hgbqp2hgbq.jpg"
+        alt="Ilustración temática de Fuera de Órbita Café"
+        width="300"
+        height="200"
+      >
+      <div class="hero__astronaut-placeholder" aria-hidden="true"></div>
+    </div>
+  </section>
+
+  <main class="cart">
+
+    <div class="cart__items">
+      <h2 class="cart__heading">PRODUCTOS EN TU CARRITO</h2>
+
+      <div class="cart__table">
+
+        <div class="cart__row cart__row--head">
+          <span class="col col--product">Producto</span>
+          <span class="col col--qty">Cantidad</span>
+          <span class="col col--price">Precio</span>
+          <span class="col col--total">Total</span>
+          <span class="col col--remove">Eliminar</span>
+        </div>
+
+        <div id="cart-list" class="cart__list">
+          <!-- Los productos se insertan dinámicamente mediante JavaScript -->
+        </div>
+
+        <p id="cart-empty" class="cart__empty" hidden>
+          Tu carrito está vacío. Vuelve al menú para agregar productos.
+        </p>
+
+      </div>
+
+      <!-- Resumen del pedido -->
+      <section class="cart-summary" aria-labelledby="summary-title">
+
+        <h2 id="summary-title" class="cart-summary__heading">
+          RESUMEN DEL PEDIDO
+        </h2>
+
+        <div class="cart-summary__line">
+          <span>Artículos en el pedido</span>
+          <span id="cart-total-items">0</span>
+        </div>
+
+        <div class="cart-summary__line cart-summary__line--total">
+          <span>Total del pedido</span>
+          <span id="cart-grand-total">$0.00</span>
+        </div>
+
+        <p class="cart-summary__note">
+          Verifica tus productos y cantidades antes de continuar.
+          El pedido quedará sujeto a confirmación.
+        </p>
+
+        <button
+          type="button"
+          id="preorder-button"
+          class="cart-summary__button"
+          disabled
+        >
+          PREORDENAR
+        </button>
+
+        <p
+          id="preorder-message"
+          class="cart-summary__message"
+          role="status"
+          aria-live="polite"
+        ></p>
+
+        <a href="menu.html" class="cart-summary__back">
+          SEGUIR EXPLORANDO EL MENÚ
+        </a>
+
+      </section>
+
+      <div class="brand">
+        <span class="brand__icon">🪐</span>
+        <span class="brand__text">ÓRBITA<br>COFFEE</span>
+      </div>
+
+    </div>
+
+  </main>
+
+  <footer>
+    <div id="footer"></div>
+  </footer>
+
+</body>
+</html>

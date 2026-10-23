@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menú Completo | Cafetería</title>
+  <link rel="stylesheet" href="css/menu.css">
+  <link rel="stylesheet" href="css/carrito_flotante.css">
+
+  <script src="scripts/components.js"></script>
+  <script src="scripts/carrito_flotante.js"></script>
+</head>
+
+<header>
+    <div id="header"></div>
+</header>
+
+<body>
+
+  <!-- ============================================================
+       HERO / ENCABEZADO
+       Título fijo de la página. No depende de la base de datos.
+  ============================================================ -->
+  <header class="hero">
+    <div class="hero__text">
+      <h1>Descubre nuestro<br>menú completo</h1>
+    </div>
+    <div class="hero__image">
+        <img src="https://i.imgur.com/tzYahWW.png" height="300">
+    </div>
+  </header>
+
+  <!-- ============================================================
+       NAVEGACIÓN DE CATEGORÍAS
+       Las categorías (nombre, ícono, id) deberían venir también
+       de la base de datos (tabla "categorias"), para no tener
+       que tocar el HTML cada vez que se agregue/elimine una.
+       Aquí se dejan 3 fijas como ejemplo/fallback.
+  ============================================================ -->
+  <nav class="categories" id="categories-nav">
+    <!-- INICIO: bloque repetible por categoría (renderizado desde BD) -->
+    <button class="categories__item is-active" data-category="bebidas-calientes">
+      <span class="categories__icon" aria-hidden="true">☕</span>
+      <span class="categories__label">Bebidas calientes</span>
+    </button>
+    <button class="categories__item" data-category="bebidas-frias">
+      <span class="categories__icon" aria-hidden="true">🥤</span>
+      <span class="categories__label">Bebidas frías</span>
+    </button>
+    <button class="categories__item" data-category="alimentos">
+      <span class="categories__icon" aria-hidden="true">🥐</span>
+      <span class="categories__label">Alimentos</span>
+    </button>
+    <!-- FIN: bloque repetible por categoría -->
+  </nav>
+
+  <!-- ============================================================
+       GRID DE PRODUCTOS
+       Este es el contenedor principal que se debe poblar de forma
+       dinámica desde la base de datos (tabla "productos").
+       Cada producto necesita, como mínimo, estos campos:
+         - id
+         - nombre
+         - descripcion
+         - precio (idealmente separado en entero + decimales,
+           tal como se ve en el diseño: "$4" + ".00")
+         - categoria (para poder filtrar por la nav de arriba)
+         - imagen_url (se ignora visualmente por ahora)
+       El siguiente <article class="product-card"> es la PLANTILLA
+       de una sola tarjeta de producto. En el backend/frontend real,
+       este bloque se repetiría dinámicamente (loop / map / render)
+       una vez por cada producto obtenido de la BD.
+  ============================================================ -->
+  <main class="products" id="products-grid">
+    <!-- Este contenedor se llena dinámicamente con JavaScript
+         a partir de los datos de Google Sheets. No se necesita
+         ningún <article> estático aquí. -->
+  </main>
+
+  <script src="scripts/menu.js"></script>
+
+  <a href="carrito.html" class="floating-cart" id="floating-cart" aria-label="Ver carrito">
+  🛒<span class="floating-cart__badge" id="cart-count" hidden>0</span>
+</a>
+
+</body>
+
+<footer>
+    <div id="footer"></div>
+
+</footer>
+</html>
